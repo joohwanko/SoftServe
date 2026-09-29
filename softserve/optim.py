@@ -1,9 +1,11 @@
 """Fixed-lambda SoftSERVE-Diag and SoftSERVE-Kron for PyTorch.
 
-Use parameter_step() and update_curvature(s, y) for interval secants.
-step() uses consecutive gradients and is intended for deterministic losses.
-step(closure) evaluates both endpoints on the same cached data/randomness.
-The experiment runners implement K=10 and count endpoint replays explicitly.
+Pass an nn.Module for automatic parameter routing and K-step interval secants.
+With the legacy parameter-list interface, use parameter_step() and
+update_curvature(s, y) for interval secants. Its step() uses consecutive
+gradients for deterministic losses; step(closure) evaluates both endpoints
+on the cached data/randomness supplied by the caller. The experiment runners
+implement K=10 and count endpoint replays explicitly.
 """
 
 from __future__ import annotations
@@ -385,6 +387,13 @@ class _SecantOptimizer(Optimizer):
 class SoftServeDiag(_SecantOptimizer):
     """Diagonal SoftSERVE (one positive inverse-metric value per parameter)."""
 
+    def __new__(cls, params=None, *args, **kwargs):
+        if cls is SoftServeDiag and isinstance(params, torch.nn.Module):
+            from .model import ModelSoftServeDiag
+
+            return ModelSoftServeDiag(params, *args, **kwargs)
+        return super().__new__(cls)
+
     def __init__(
         self,
         params,
@@ -485,7 +494,18 @@ class SoftServeKron(_SecantOptimizer):
     A matrix parameter has shape ``(rows, columns)`` and direction
     ``G @ gradient @ A``.  Non-matrix parameters receive the diagonal update,
     although routing biases to Adam is usually preferable for neural networks.
+
+    Passing an ``nn.Module`` instead of parameters selects the model-aware
+    interface: automatic routing, interval replay, and an optional fallback.
+    The parameter-list interface remains unchanged for the paper runners.
     """
+
+    def __new__(cls, params=None, *args, **kwargs):
+        if cls is SoftServeKron and isinstance(params, torch.nn.Module):
+            from .model import ModelSoftServeKron
+
+            return ModelSoftServeKron(params, *args, **kwargs)
+        return super().__new__(cls)
 
     def __init__(
         self,
