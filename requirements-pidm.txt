@@ -1,0 +1,7 @@
+# Install after the base experiment dependencies. Match torch/torchvision to your CUDA build.
+einops-exts
+rotary-embedding-torch
+findiff==0.12.2
+solidspy==1.1.0.post1
+opencv-python-headless
+imageio

@@ -1,0 +1,169 @@
+{
+  "seeds": [
+    7,
+    8,
+    9
+  ],
+  "runs": [
+    {
+      "task": "piratenet",
+      "config": {
+        "batch": 32768,
+        "beta": 0.995,
+        "derivatives": "jet_compile",
+        "eval_every": 1000,
+        "final": true,
+        "lam": 999.0,
+        "lr": 0.001,
+        "method": "adam",
+        "microbatch": 32768,
+        "seed": 7,
+        "size": "base",
+        "smoke": false,
+        "task": "allen_cahn",
+        "updates": 300000
+      },
+      "plot_gradient_cap": 300600
+    },
+    {
+      "task": "piratenet",
+      "config": {
+        "batch": 32768,
+        "beta": 0.995,
+        "derivatives": "jet_compile",
+        "eval_every": 1000,
+        "final": true,
+        "lam": 999.0,
+        "lr": 0.0001,
+        "method": "muon",
+        "microbatch": 32768,
+        "seed": 7,
+        "size": "base",
+        "smoke": false,
+        "task": "allen_cahn",
+        "updates": 300000
+      },
+      "plot_gradient_cap": 300600
+    },
+    {
+      "task": "piratenet",
+      "config": {
+        "batch": 32768,
+        "beta": 0.995,
+        "derivatives": "jet_compile",
+        "eval_every": 1000,
+        "final": true,
+        "lam": 999.0,
+        "lr": 3.1622776601683795e-05,
+        "method": "soap",
+        "microbatch": 32768,
+        "seed": 7,
+        "size": "base",
+        "smoke": false,
+        "task": "allen_cahn",
+        "updates": 300000
+      },
+      "plot_gradient_cap": 300600
+    },
+    {
+      "task": "piratenet",
+      "config": {
+        "batch": 32768,
+        "beta": 0.995,
+        "derivatives": "jet_compile",
+        "eval_every": 1000,
+        "final": true,
+        "lam": 9999.0,
+        "lr": 0.001,
+        "method": "kron",
+        "microbatch": 32768,
+        "seed": 7,
+        "size": "base",
+        "smoke": false,
+        "task": "allen_cahn",
+        "updates": 300000
+      },
+      "plot_gradient_cap": 300600
+    },
+    {
+      "task": "piratenet",
+      "config": {
+        "batch": 32768,
+        "beta": 0.995,
+        "derivatives": "jet_compile",
+        "eval_every": 1000,
+        "final": true,
+        "lam": 999.0,
+        "lr": 0.01,
+        "method": "adam",
+        "microbatch": 32768,
+        "seed": 7,
+        "size": "base",
+        "smoke": false,
+        "task": "kdv",
+        "updates": 100000
+      },
+      "plot_gradient_cap": 100200
+    },
+    {
+      "task": "piratenet",
+      "config": {
+        "batch": 32768,
+        "beta": 0.995,
+        "derivatives": "jet_compile",
+        "eval_every": 1000,
+        "final": true,
+        "lam": 999.0,
+        "lr": 0.0001,
+        "method": "muon",
+        "microbatch": 32768,
+        "seed": 7,
+        "size": "base",
+        "smoke": false,
+        "task": "kdv",
+        "updates": 100000
+      },
+      "plot_gradient_cap": 100200
+    },
+    {
+      "task": "piratenet",
+      "config": {
+        "batch": 32768,
+        "beta": 0.995,
+        "derivatives": "jet_compile",
+        "eval_every": 1000,
+        "final": true,
+        "lam": 999.0,
+        "lr": 0.00031622776601683794,
+        "method": "soap",
+        "microbatch": 32768,
+        "seed": 7,
+        "size": "base",
+        "smoke": false,
+        "task": "kdv",
+        "updates": 100000
+      },
+      "plot_gradient_cap": 100200
+    },
+    {
+      "task": "piratenet",
+      "config": {
+        "batch": 32768,
+        "beta": 0.995,
+        "derivatives": "jet_compile",
+        "eval_every": 1000,
+        "final": true,
+        "lam": 999.0,
+        "lr": 0.001,
+        "method": "kron",
+        "microbatch": 32768,
+        "seed": 7,
+        "size": "base",
+        "smoke": false,
+        "task": "kdv",
+        "updates": 100000
+      },
+      "plot_gradient_cap": 100200
+    }
+  ]
+}

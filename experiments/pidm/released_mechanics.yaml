@@ -1,0 +1,13 @@
+c_data: 1
+c_residual: 1
+c_ineq: 10
+lambda_opt: 0.0001
+diff_steps: 100
+x0_estimation: 'sample'
+ddim_steps: 0
+residual_grad_guidance: false
+correction_mode: xt
+M_correction: 0
+N_correction: 0
+gov_eqs: mechanics
+fd_acc: 2

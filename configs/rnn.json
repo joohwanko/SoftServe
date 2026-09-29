@@ -1,0 +1,189 @@
+{
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "runs": [
+    {
+      "task": "rnn",
+      "config": {
+        "batch_size": 128,
+        "beta": 0.9,
+        "beta1": 0.99,
+        "device": "cpu",
+        "dtype": "float32",
+        "evaluation_interval": 200,
+        "fixed_lambda": 999.0,
+        "gradient_budget": 40000,
+        "inverse_steps": 10,
+        "learning_rate": 0.001333521432163324,
+        "method": "softserve_kron",
+        "nesterov": true,
+        "qme_backend": "gemm",
+        "refresh_interval": 10,
+        "root_steps": 18,
+        "seed": 1,
+        "selected": true,
+        "sequence_length": 100
+      }
+    },
+    {
+      "task": "rnn",
+      "config": {
+        "batch_size": 128,
+        "beta": 0.9,
+        "beta1": 0.99,
+        "device": "cpu",
+        "dtype": "float32",
+        "evaluation_interval": 200,
+        "fixed_lambda": 1.0,
+        "gradient_budget": 40000,
+        "inverse_steps": 10,
+        "learning_rate": 0.0031622776601683794,
+        "method": "softserve_diag",
+        "nesterov": true,
+        "qme_backend": "gemm",
+        "refresh_interval": 10,
+        "root_steps": 18,
+        "seed": 1,
+        "selected": true,
+        "sequence_length": 100
+      }
+    },
+    {
+      "task": "rnn",
+      "config": {
+        "batch_size": 128,
+        "beta": 0.9,
+        "beta1": 0.8,
+        "device": "cpu",
+        "dtype": "float32",
+        "evaluation_interval": 200,
+        "fixed_lambda": null,
+        "gradient_budget": 40000,
+        "inverse_steps": 10,
+        "learning_rate": 0.01,
+        "method": "sgd_m",
+        "nesterov": false,
+        "qme_backend": "gemm",
+        "refresh_interval": 10,
+        "root_steps": 18,
+        "seed": 1,
+        "selected": true,
+        "sequence_length": 100
+      }
+    },
+    {
+      "task": "rnn",
+      "config": {
+        "batch_size": 128,
+        "beta": 0.9,
+        "beta1": 0.9,
+        "device": "cpu",
+        "dtype": "float32",
+        "evaluation_interval": 200,
+        "fixed_lambda": null,
+        "gradient_budget": 40000,
+        "inverse_steps": 10,
+        "learning_rate": 0.001,
+        "method": "adam",
+        "nesterov": false,
+        "qme_backend": "gemm",
+        "refresh_interval": 10,
+        "root_steps": 18,
+        "seed": 1,
+        "selected": true,
+        "sequence_length": 100
+      }
+    },
+    {
+      "task": "rnn",
+      "config": {
+        "batch_size": 128,
+        "beta": 0.9,
+        "beta1": 0.99,
+        "device": "cpu",
+        "dtype": "float32",
+        "evaluation_interval": 200,
+        "fixed_lambda": null,
+        "gradient_budget": 40000,
+        "inverse_steps": 10,
+        "learning_rate": 0.00031622776601683794,
+        "method": "muon",
+        "nesterov": true,
+        "qme_backend": "gemm",
+        "refresh_interval": 10,
+        "root_steps": 18,
+        "seed": 1,
+        "selected": true,
+        "sequence_length": 100
+      }
+    },
+    {
+      "task": "rnn",
+      "config": {
+        "batch_size": 128,
+        "beta": 0.9,
+        "beta1": 0.99,
+        "device": "cpu",
+        "dtype": "float32",
+        "evaluation_interval": 200,
+        "fixed_lambda": null,
+        "gradient_budget": 40000,
+        "inverse_steps": 10,
+        "learning_rate": 0.000316227766016838,
+        "method": "soap",
+        "nesterov": false,
+        "qme_backend": "gemm",
+        "refresh_interval": 10,
+        "root_steps": 18,
+        "seed": 1,
+        "selected": true,
+        "sequence_length": 100
+      }
+    },
+    {
+      "task": "rnn_structured",
+      "config": {
+        "batch_size": 128,
+        "damping": 0.0001,
+        "device": "cpu",
+        "dtype": "float32",
+        "evaluation_interval": 200,
+        "factor_decay": 0.9,
+        "gradient_budget": 40000,
+        "history_size": 100,
+        "inverse_frequency": 20,
+        "learning_rate": 0.1,
+        "method": "kbfgs_l",
+        "momentum": 0.95,
+        "seed": 1,
+        "selected": true,
+        "sequence_length": 100,
+        "task": "rnn"
+      }
+    },
+    {
+      "task": "rnn_structured",
+      "config": {
+        "batch_size": 128,
+        "damping": 1e-06,
+        "device": "cpu",
+        "dtype": "float32",
+        "evaluation_interval": 200,
+        "factor_decay": 0.9,
+        "gradient_budget": 40000,
+        "history_size": 100,
+        "inverse_frequency": 20,
+        "learning_rate": 0.00031622776601683794,
+        "method": "kfac",
+        "momentum": 0.9,
+        "seed": 1,
+        "selected": true,
+        "sequence_length": 100,
+        "task": "rnn"
+      }
+    }
+  ]
+}

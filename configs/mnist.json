@@ -1,0 +1,368 @@
+{
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "runs": [
+    {
+      "task": "mnist_deterministic",
+      "config": {
+        "beta1": 0.9,
+        "data_path": "data/mnist/mnist.npz",
+        "device": "cuda",
+        "evaluation_interval": 100,
+        "fallback_learning_rate": 0.001,
+        "fixed_lambda": 999.0,
+        "gradient_budget": 4000,
+        "inverse_steps": 10,
+        "learning_rate": 0.1,
+        "method": "softserve_kron",
+        "nesterov": false,
+        "qme_backend": "gemm",
+        "refresh_interval": 10,
+        "root_steps": 18,
+        "seed": 1,
+        "selected": true
+      }
+    },
+    {
+      "task": "mnist_deterministic",
+      "config": {
+        "beta1": 0.9,
+        "data_path": "data/mnist/mnist.npz",
+        "device": "cuda",
+        "evaluation_interval": 100,
+        "fallback_learning_rate": 0.001,
+        "fixed_lambda": 9.0,
+        "gradient_budget": 4000,
+        "inverse_steps": 10,
+        "learning_rate": 0.1,
+        "method": "softserve_diag",
+        "nesterov": false,
+        "qme_backend": "gemm",
+        "refresh_interval": 10,
+        "root_steps": 18,
+        "seed": 1,
+        "selected": true
+      }
+    },
+    {
+      "task": "mnist_deterministic",
+      "config": {
+        "beta1": 0.95,
+        "data_path": "data/mnist/mnist.npz",
+        "device": "cuda",
+        "evaluation_interval": 100,
+        "fallback_learning_rate": 0.001,
+        "fixed_lambda": null,
+        "gradient_budget": 4000,
+        "inverse_steps": 10,
+        "learning_rate": 0.1,
+        "method": "sgd_m",
+        "nesterov": false,
+        "qme_backend": "gemm",
+        "refresh_interval": 10,
+        "root_steps": 18,
+        "seed": 1,
+        "selected": true
+      }
+    },
+    {
+      "task": "mnist_deterministic",
+      "config": {
+        "beta1": 0.95,
+        "data_path": "data/mnist/mnist.npz",
+        "device": "cuda",
+        "evaluation_interval": 100,
+        "fallback_learning_rate": 0.001,
+        "fixed_lambda": null,
+        "gradient_budget": 4000,
+        "inverse_steps": 10,
+        "learning_rate": 0.0031622776601683794,
+        "method": "adam",
+        "nesterov": false,
+        "qme_backend": "gemm",
+        "refresh_interval": 10,
+        "root_steps": 18,
+        "seed": 1,
+        "selected": true
+      }
+    },
+    {
+      "task": "mnist_deterministic",
+      "config": {
+        "beta1": 0.95,
+        "data_path": "data/mnist/mnist.npz",
+        "device": "cuda",
+        "evaluation_interval": 100,
+        "fallback_learning_rate": 0.001,
+        "fixed_lambda": null,
+        "gradient_budget": 4000,
+        "inverse_steps": 10,
+        "learning_rate": 0.001,
+        "method": "muon",
+        "nesterov": false,
+        "qme_backend": "gemm",
+        "refresh_interval": 10,
+        "root_steps": 18,
+        "seed": 1,
+        "selected": true
+      }
+    },
+    {
+      "task": "mnist_deterministic",
+      "config": {
+        "beta1": 0.9,
+        "data_path": "data/mnist/mnist.npz",
+        "device": "cuda",
+        "evaluation_interval": 100,
+        "fallback_learning_rate": 0.001,
+        "fixed_lambda": null,
+        "gradient_budget": 4000,
+        "inverse_steps": 10,
+        "learning_rate": 0.0010000000000000002,
+        "method": "soap",
+        "nesterov": false,
+        "qme_backend": "gemm",
+        "refresh_interval": 10,
+        "root_steps": 18,
+        "seed": 1,
+        "selected": true
+      }
+    },
+    {
+      "task": "mnist_lbfgs",
+      "config": {
+        "beta1": 0.0,
+        "data_path": "data/mnist/mnist.npz",
+        "device": "cuda",
+        "evaluation_interval": 100,
+        "fallback_learning_rate": 0.001,
+        "fixed_lambda": null,
+        "gradient_budget": 4000,
+        "inverse_steps": 10,
+        "learning_rate": 1.0,
+        "method": "lbfgs",
+        "nesterov": false,
+        "qme_backend": "gemm",
+        "refresh_interval": 10,
+        "root_steps": 18,
+        "seed": 1,
+        "selected": true
+      }
+    },
+    {
+      "task": "mnist_structured",
+      "config": {
+        "batch_size": 1000,
+        "damping": 3.0,
+        "data_path": "data/mnist/mnist.npz",
+        "device": "cuda",
+        "evaluation_interval": 100,
+        "factor_decay": 0.9,
+        "gradient_budget": 4000,
+        "history_size": 100,
+        "inverse_update_frequency": 20,
+        "learning_rate": 0.31622776601683794,
+        "method": "kfac",
+        "mode": "deterministic",
+        "momentum": 0.9,
+        "seed": 1,
+        "selected": true
+      }
+    },
+    {
+      "task": "mnist_structured",
+      "config": {
+        "batch_size": 1000,
+        "damping": 0.3,
+        "data_path": "data/mnist/mnist.npz",
+        "device": "cuda",
+        "evaluation_interval": 100,
+        "factor_decay": 0.9,
+        "gradient_budget": 4000,
+        "history_size": 100,
+        "inverse_update_frequency": 20,
+        "learning_rate": 0.5431674729081366,
+        "method": "kbfgs_l",
+        "mode": "deterministic",
+        "momentum": 0.95,
+        "seed": 1,
+        "selected": true
+      }
+    },
+    {
+      "task": "mnist_stochastic",
+      "config": {
+        "batch_size": 1000,
+        "beta1": 0.95,
+        "data_path": "data/mnist/mnist.npz",
+        "device": "cuda",
+        "evaluation_interval": 100,
+        "fallback_learning_rate": 0.001,
+        "fixed_lambda": 999.0,
+        "gradient_budget": 6000,
+        "inverse_steps": 10,
+        "learning_rate": 0.1,
+        "method": "softserve_kron",
+        "nesterov": true,
+        "qme_backend": "gemm",
+        "refresh_interval": 10,
+        "root_steps": 18,
+        "seed": 1,
+        "selected": true
+      }
+    },
+    {
+      "task": "mnist_stochastic",
+      "config": {
+        "batch_size": 1000,
+        "beta1": 0.95,
+        "data_path": "data/mnist/mnist.npz",
+        "device": "cuda",
+        "evaluation_interval": 100,
+        "fallback_learning_rate": 0.001,
+        "fixed_lambda": 9.0,
+        "gradient_budget": 6000,
+        "inverse_steps": 10,
+        "learning_rate": 0.1,
+        "method": "softserve_diag",
+        "nesterov": true,
+        "qme_backend": "gemm",
+        "refresh_interval": 10,
+        "root_steps": 18,
+        "seed": 1,
+        "selected": true
+      }
+    },
+    {
+      "task": "mnist_stochastic",
+      "config": {
+        "batch_size": 1000,
+        "beta1": 0.95,
+        "data_path": "data/mnist/mnist.npz",
+        "device": "cuda",
+        "evaluation_interval": 100,
+        "fallback_learning_rate": 0.001,
+        "fixed_lambda": null,
+        "gradient_budget": 6000,
+        "inverse_steps": 10,
+        "learning_rate": 0.1,
+        "method": "sgd_m",
+        "nesterov": false,
+        "qme_backend": "gemm",
+        "refresh_interval": 10,
+        "root_steps": 18,
+        "seed": 1,
+        "selected": true
+      }
+    },
+    {
+      "task": "mnist_stochastic",
+      "config": {
+        "batch_size": 1000,
+        "beta1": 0.9,
+        "data_path": "data/mnist/mnist.npz",
+        "device": "cuda",
+        "evaluation_interval": 100,
+        "fallback_learning_rate": 0.001,
+        "fixed_lambda": null,
+        "gradient_budget": 6000,
+        "inverse_steps": 10,
+        "learning_rate": 0.0031622776601683794,
+        "method": "adam",
+        "nesterov": false,
+        "qme_backend": "gemm",
+        "refresh_interval": 10,
+        "root_steps": 18,
+        "seed": 1,
+        "selected": true
+      }
+    },
+    {
+      "task": "mnist_stochastic",
+      "config": {
+        "batch_size": 1000,
+        "beta1": 0.95,
+        "data_path": "data/mnist/mnist.npz",
+        "device": "cuda",
+        "evaluation_interval": 100,
+        "fallback_learning_rate": 0.001,
+        "fixed_lambda": null,
+        "gradient_budget": 6000,
+        "inverse_steps": 10,
+        "learning_rate": 0.001,
+        "method": "muon",
+        "nesterov": true,
+        "qme_backend": "gemm",
+        "refresh_interval": 10,
+        "root_steps": 18,
+        "seed": 1,
+        "selected": true
+      }
+    },
+    {
+      "task": "mnist_stochastic",
+      "config": {
+        "batch_size": 1000,
+        "beta1": 0.9,
+        "data_path": "data/mnist/mnist.npz",
+        "device": "cuda",
+        "evaluation_interval": 100,
+        "fallback_learning_rate": 0.001,
+        "fixed_lambda": null,
+        "gradient_budget": 6000,
+        "inverse_steps": 10,
+        "learning_rate": 0.001,
+        "method": "soap",
+        "nesterov": false,
+        "qme_backend": "gemm",
+        "refresh_interval": 10,
+        "root_steps": 18,
+        "seed": 1,
+        "selected": true
+      }
+    },
+    {
+      "task": "mnist_structured",
+      "config": {
+        "batch_size": 1000,
+        "damping": 3.0,
+        "data_path": "data/mnist/mnist.npz",
+        "device": "cuda",
+        "evaluation_interval": 100,
+        "factor_decay": 0.9,
+        "gradient_budget": 6000,
+        "history_size": 100,
+        "inverse_update_frequency": 20,
+        "learning_rate": 1.0,
+        "method": "kfac",
+        "mode": "stochastic",
+        "momentum": 0.9,
+        "seed": 1,
+        "selected": true
+      }
+    },
+    {
+      "task": "mnist_structured",
+      "config": {
+        "batch_size": 1000,
+        "damping": 0.3,
+        "data_path": "data/mnist/mnist.npz",
+        "device": "cuda",
+        "evaluation_interval": 100,
+        "factor_decay": 0.9,
+        "gradient_budget": 6000,
+        "history_size": 100,
+        "inverse_update_frequency": 20,
+        "learning_rate": 0.09486832980505137,
+        "method": "kbfgs_l",
+        "mode": "stochastic",
+        "momentum": 0.9,
+        "seed": 1,
+        "selected": true
+      }
+    }
+  ]
+}

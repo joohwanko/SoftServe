@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "softserve"
+version = "0.1.0"
+description = "Structured quasi-Newton optimization with SoftSERVE"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["torch>=2.9", "numpy>=2.0"]
+
+[project.optional-dependencies]
+experiments = ["scipy>=1.13", "matplotlib>=3.8", "torchvision", "einops", "pyyaml", "tqdm", "pandas", "h5py", "datasets", "tiktoken"]
+soap = ["torch-shampoo @ git+https://github.com/facebookresearch/optimizers.git@23b6ba547156ed5a3dd68a6f543e4858ed6ffbf6"]
+
+[tool.setuptools.packages.find]
+include = ["softserve*", "experiments*"]
+
+[tool.setuptools.package-data]
+"experiments.pidm" = ["released_mechanics.yaml"]
+"experiments.pidm.upstream" = ["LICENSE"]
+"experiments.llm.soap" = ["LICENSE"]
+
+[tool.ruff]
+line-length = 100
+extend-exclude = ["experiments/pidm/upstream", "experiments/llm/soap"]

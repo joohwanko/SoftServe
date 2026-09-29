@@ -1,0 +1,77 @@
+{
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "runs": [
+    {
+      "task": "pidm",
+      "config": {
+        "method": "adam",
+        "lr": 0.0001,
+        "seed": 1,
+        "updates": 100000,
+        "phase": "final100k",
+        "batch": 16,
+        "block": 256,
+        "eval_every": 500,
+        "train_probe": 32,
+        "validation_probe": 128,
+        "data_root": "data/pidm/mechanics"
+      },
+      "plot_gradient_cap": 100000
+    },
+    {
+      "task": "pidm",
+      "config": {
+        "method": "muon",
+        "lr": 0.0003,
+        "seed": 1,
+        "updates": 100000,
+        "phase": "final100k",
+        "batch": 16,
+        "block": 256,
+        "eval_every": 500,
+        "train_probe": 32,
+        "validation_probe": 128,
+        "data_root": "data/pidm/mechanics"
+      },
+      "plot_gradient_cap": 100000
+    },
+    {
+      "task": "pidm",
+      "config": {
+        "method": "soap",
+        "lr": 0.0001,
+        "seed": 1,
+        "updates": 100000,
+        "phase": "final100k",
+        "batch": 16,
+        "block": 256,
+        "eval_every": 500,
+        "train_probe": 32,
+        "validation_probe": 128,
+        "data_root": "data/pidm/mechanics"
+      },
+      "plot_gradient_cap": 100000
+    },
+    {
+      "task": "pidm",
+      "config": {
+        "method": "kron",
+        "lr": 0.003,
+        "seed": 1,
+        "updates": 100000,
+        "phase": "final100k",
+        "batch": 16,
+        "block": 256,
+        "eval_every": 500,
+        "train_probe": 32,
+        "validation_probe": 128,
+        "data_root": "data/pidm/mechanics"
+      },
+      "plot_gradient_cap": 100000
+    }
+  ]
+}
