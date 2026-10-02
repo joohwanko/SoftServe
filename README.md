@@ -1,23 +1,19 @@
 <div align="center">
 
-# SoftSERVE 🍦
+# SoftServe 🍦
 
-**Secant Equation Regularized with Variational Entropy**
+Official PyTorch implementation of **[SoftServe: A Scalable Quasi-Newton Method for Deep Learning](https://arxiv.org/abs/2610.02182)**.
 
-Official PyTorch implementation of **SoftSERVE: A Scalable Quasi-Newton Method for Deep Learning**.
-
-Joohwan Ko · Tetiana Parshakova · Diana Cai · Robert Gower
-
+[![arXiv](https://img.shields.io/badge/arXiv-2610.02182-b31b1b.svg)](https://arxiv.org/abs/2610.02182)
 ![Python](https://img.shields.io/badge/Python-3.12%2B-3776AB?logo=python&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.9%2B-EE4C2C?logo=pytorch&logoColor=white)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 [Install](#installation) · [Quick start](#quick-start) · [Examples](#examples) · [Experiments](#experiments) · [Citation](#citation)
 
-*arXiv preprint coming soon.*
-
 </div>
 
-SoftSERVE learns positive-definite, structured inverse-curvature estimates from secant pairs. This repository provides Kronecker (`SoftServeKron`) and diagonal (`SoftServeDiag`) optimizers, experiment runners, and selected paper configurations.
+SoftServe learns positive-definite, structured inverse-curvature estimates from secant pairs. This repository provides Kronecker (`SoftServeKron`) and diagonal (`SoftServeDiag`) optimizers, experiment runners, and selected paper configurations.
 
 ## Installation
 
@@ -55,7 +51,7 @@ optimizer = SoftServeKron(
 )
 ```
 
-Pass the **model**, after moving it to its training device. SoftSERVE routes matrix weights and convolution kernels to Kron, and biases, embeddings, normalization parameters, and other tensors to the fallback. Matrix factors are bounded to blocks of at most 256 × 256.
+Pass the **model**, after moving it to its training device. SoftServe routes matrix weights and convolution kernels to Kron, and biases, embeddings, normalization parameters, and other tensors to the fallback. Matrix factors are bounded to blocks of at most 256 × 256.
 
 Choose `fallback="adam"`, `"adamw"`, or `"softserve-diag"` (default). `fallback_lr` defaults to `lr`. Diag shares Kron's λ, momentum, and refresh interval; Adam/AdamW use independent `fallback_betas=(0.9, 0.999)` and `fallback_weight_decay=0`. Set weight decay explicitly when wanted.
 
@@ -171,8 +167,18 @@ Curves show means and seed min–max ranges; failed cohorts remain individual tr
 
 ## Citation
 
-The arXiv link and BibTeX entry will be added when the preprint is available.
+```bibtex
+@misc{ko2026softserve,
+  title         = {{SoftServe}: A Scalable Quasi-Newton Method for Deep Learning},
+  author        = {Joohwan Ko and Tetiana Parshakova and Diana Cai and Robert M. Gower},
+  year          = {2026},
+  eprint        = {2610.02182},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2610.02182}
+}
+```
 
-## Acknowledgments
+## License and acknowledgments
 
-See [THIRD_PARTY.md](THIRD_PARTY.md) for upstream sources, retained licenses, and reproduction limitations.
+SoftServe is released under the [MIT License](LICENSE). Third-party code retains its original licenses and copyright notices; see [THIRD_PARTY.md](THIRD_PARTY.md) for upstream sources and reproduction limitations.

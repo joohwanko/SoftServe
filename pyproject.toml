@@ -1,14 +1,24 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77.0.3"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "softserve"
 version = "0.1.0"
-description = "Structured quasi-Newton optimization with SoftSERVE"
+description = "Structured quasi-Newton optimization with SoftServe"
 readme = "README.md"
+license = "MIT"
+license-files = [
+    "LICENSE",
+    "THIRD_PARTY.md",
+    "experiments/pidm/upstream/LICENSE",
+    "experiments/llm/soap/LICENSE",
+]
 requires-python = ">=3.12"
 dependencies = ["torch>=2.9", "numpy>=2.0"]
+
+[project.urls]
+Paper = "https://arxiv.org/abs/2610.02182"
 
 [project.optional-dependencies]
 experiments = ["scipy>=1.13", "matplotlib>=3.8", "torchvision", "einops", "pyyaml", "tqdm", "pandas", "h5py", "datasets", "tiktoken"]
